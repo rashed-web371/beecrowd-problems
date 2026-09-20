@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 int main(void){
+    
     int value_1, value_2, value_3;
     scanf("%i %i %i", &value_1, &value_2, &value_3);
   
