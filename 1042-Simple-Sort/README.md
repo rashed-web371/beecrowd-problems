@@ -32,11 +32,14 @@ Output Requirements:
 ```text
 middle = (number_1 + number_2 + number_3) - smallest - largest
 
-Exact Formatting: Outputs the sorted values sequentially, prints a newline separator via print(), and concludes by echoing the original values.
+4. **Structured Output:**
+   * Prints the sorted sequence in ascending order (`smallest`, `middle`, `largest`), each on a separate line.
+   * Prints a blank line separator using an empty `print()`.
+   * Prints the original values in their initial input order (`number_1`, `number_2`, `number_3`).
 
 
-Source Code
-Python
+## Source Code
+```python
 # get vlues from user
 number_1, number_2, number_3 = map(int, input().split())
 
