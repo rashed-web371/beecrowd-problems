@@ -14,27 +14,29 @@ A clean and verified solution for Beecrowd Problem 1042 using Python 3.
 
 ## Task Summary
 
-The task requires reading three distinct or non-distinct integers from the standard input. The program must:
-1. Sort the three integers in ascending order.
-2. Print the sorted values, one per line.
-3. Print a blank line.
-4. Print the three original values in the exact sequence they were originally read, one per line.
+The program reads three integer numbers from standard input and sorts them in ascending order.
+
+Output Requirements:
+* Print the sorted values in ascending order, one per line.
+* Print a blank line.
+* Print the values in the sequence as they were read, one per line.
 
 ## Logic & Implementation
 
-1. **Input Parsing:** Read three integers simultaneously from a single line using `map(int, input().split())` while retaining the original values in their original variables.
-2. **Boundary Comparisons (Min / Max):**
-   - Identify the minimum value (`smallest`) by comparing all three variables using inclusive relational operators (`<=`).
-   - Identify the maximum value (`largest`) using matching upper-bound comparisons (`>=`).
-3. **Arithmetic Derivation of Median:**
-   - Instead of nested conditional branches, the middle value is determined using the mathematical invariant:
-   $$\text{middle} = (\text{number\_1} + \text{number\_2} + \text{number\_3}) - \text{smallest} - \text{largest}$$
-4. **Structured Output:** Print the sorted triplet (`smallest`, `middle`, `largest`), emit an empty newline via `print()`, and output the input values in original sequence.
+1. **Input Parsing:** Reads three integers simultaneously on a single line using `map(int, input().split())` while preserving the original input sequence across distinct variables.
+2. **Extremum Identification:**
+   * Uses inclusive relational operators (`<=`) to identify the minimum value (`smallest`).
+   * Uses inclusive relational operators (`>=`) to identify the maximum value (`largest`), safely handling duplicate edge cases.
+3. **Median Derivation:** Uses an arithmetic invariant to resolve the middle element without nested logic:
+
+$$\text{middle} = (\text{number\_1} + \text{number\_2} + \text{number\_3}) - \text{smallest} - \text{largest}$$
+
+4. **Exact Formatting:** Outputs the sorted values sequentially, prints a newline separator via `print()`, and concludes by echoing the original values.
 
 ## Source Code
 
 ```python
-# get values from user
+# get vlues from user
 number_1, number_2, number_3 = map(int, input().split())
 
 # look for smallest value
