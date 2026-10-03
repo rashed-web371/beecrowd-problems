@@ -28,9 +28,9 @@ Output Requirements:
    * Uses inclusive relational operators (`<=`) to identify the minimum value (`smallest`).
    * Uses inclusive relational operators (`>=`) to identify the maximum value (`largest`), safely handling duplicate edge cases.
 3. **Median Derivation:** Uses an arithmetic invariant to resolve the middle element without nested logic:
-
 ```text
 middle = (number_1 + number_2 + number_3) - smallest - largest
+```
 
 4. **Structured Output:**
    * Prints the sorted sequence in ascending order (`smallest`, `middle`, `largest`), each on a separate line.
