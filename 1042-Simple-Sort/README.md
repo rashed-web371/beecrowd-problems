@@ -29,13 +29,14 @@ Output Requirements:
    * Uses inclusive relational operators (`>=`) to identify the maximum value (`largest`), safely handling duplicate edge cases.
 3. **Median Derivation:** Uses an arithmetic invariant to resolve the middle element without nested logic:
 
-$$\text{middle} = (\text{number\_1} + \text{number\_2} + \text{number\_3}) - \text{smallest} - \text{largest}$$
+```text
+middle = (number_1 + number_2 + number_3) - smallest - largest
 
-4. **Exact Formatting:** Outputs the sorted values sequentially, prints a newline separator via `print()`, and concludes by echoing the original values.
+Exact Formatting: Outputs the sorted values sequentially, prints a newline separator via print(), and concludes by echoing the original values.
 
-## Source Code
 
-```python
+Source Code
+Python
 # get vlues from user
 number_1, number_2, number_3 = map(int, input().split())
 
