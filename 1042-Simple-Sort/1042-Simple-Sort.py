@@ -28,7 +28,7 @@ else:
 # look for middle value
 middle = (number_1 + number_2 + number_3) - smallest - largest
 
-# print results
+# print results in ascending & in the sequence as they were readed
 print(smallest)
 print(middle)
 print(largest)
