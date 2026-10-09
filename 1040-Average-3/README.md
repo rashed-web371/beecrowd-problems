@@ -5,6 +5,7 @@ A clean and verified solution for Beecrowd Problem 1040 using Python 3.
 ---
 
 ### Overview
+
 | Attribute | Details |
 | :--- | :--- |
 | **Problem ID** | 1040 |
@@ -16,26 +17,34 @@ A clean and verified solution for Beecrowd Problem 1040 using Python 3.
 ---
 
 ### Task Summary
+
 The program reads four floating-point numbers representing student test scores ($N_1, N_2, N_3, N_4$) with weights of 2, 3, 4, and 1 respectively.
 
 The weighted average is calculated as:
-$$\text{Average} = \frac{(N_1 \times 2) + (N_2 \times 3) + (N_3 \times 4) + (N_4 \times 1)}{10}$$
+
+```text
+Average = ((N1 * 2) + (N2 * 3) + (N3 * 4) + (N4 * 1)) / 10
+```
 
 **Evaluation Rules:**
-- **Average $\ge 7.0$:** Print `Aluno aprovado.` (Student approved).
-- **Average $< 5.0$:** Print `Aluno reprovado.` (Student failed).
-- **$5.0 \le \text{Average} \le 6.9$:** Print `Aluno em exame.` (Student in exam).
-  - An additional score (`exam_score`) must then be read.
-  - Print `Nota do exame: <score>`.
-  - Recalculate: $\text{Final Average} = \frac{\text{Average} + \text{exam\_score}}{2}$.
-  - If $\text{Final Average} \ge 5.0$, print `Aluno aprovado.`; otherwise, print `Aluno reprovado.`.
-  - Print the final result: `Media final: <final_average>`.
+* **Average >= 7.0:** Print `Aluno aprovado.` (Student approved).
+* **Average < 5.0:** Print `Aluno reprovado.` (Student failed).
+* **5.0 <= Average <= 6.9:** Print `Aluno em exame.` (Student in exam).
+  * An additional score (`exam_score`) must then be read.
+  * Print `Nota do exame: <score>`.
+  * Recalculate:
+```text
+Final Average = (Average + exam_score) / 2
+```
+  * If `Final Average >= 5.0`, print `Aluno aprovado.`; otherwise, print `Aluno reprovado.`.
+  * Print the final result: `Media final: <final_average>`.
 
 All averages and scores must be displayed with exactly 1 decimal place.
 
 ---
 
 ### Logic & Implementation
+
 1. **Weighted Average:** Computes the initial grade using weight factors summing up to 10.
 2. **Early Exit Branches:** Uses `sys.exit()` immediately if the student's status is permanently determined (approved or reproved) to avoid superfluous input prompts.
 3. **Supplementary Evaluation:** If the student requires an exam, parses the additional score, calculates the unweighted mean between the initial average and the exam score, and determines the final academic verdict.
